@@ -28,3 +28,19 @@ for (let i = 0; i < lineCount; i++) {
   line.style.animation = `pulse-opacity ${Math.random() * 3 + 2}s infinite`;
   networkContainer.appendChild(line);
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navMenu = document.querySelector(".nav-menu");
+  const navLinks = document.querySelectorAll(".nav-menu li a");
+
+  menuToggle.addEventListener("click", function () {
+    navMenu.classList.toggle("show");
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      navMenu.classList.remove("show");
+    });
+  });
+});
